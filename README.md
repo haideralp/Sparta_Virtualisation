@@ -34,10 +34,12 @@ OS version :  'uname' or 'uname-a'
 -check all processes in linux - top / ps aux
 - ps aux - givens more information but with path 
 - get terminal back with control + c
--find out how to remove/delete/kill process 
+- 
+- -find out how to remove/delete/kill process 
 
 - how to us root user 'sudo su' or 'sudo i'(not good practice to use root user)
-- how to use '|' pipe
+-
+ how to use '|' pipe
 - how to check file permission - '11'
 - how to change file permission - 'chmod permission (+x) filename'
 - 'r' or 'w' or 'rw' ' all also use number '400' or '600' for all '700'. 
