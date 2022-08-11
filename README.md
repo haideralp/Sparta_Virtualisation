@@ -4,6 +4,10 @@
 - 
 # What is Vagrant ?
 - A tool owned by HashCorps that is mainly used in builing and managing virutal machines in a singe workflow. Vagrant places emphasis on easy to use workflows and automation of tasks. It reduces time to set up dev environment. 
+
+![image](https://user-images.githubusercontent.com/97620055/184191411-31f2fb48-b5ec-4b05-911d-2e4eb0c28c8d.png)
+
+
 # What is Virtual box ?
 
 Key Commands:
