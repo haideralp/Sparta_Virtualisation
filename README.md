@@ -1,6 +1,10 @@
-# What is Dev Env & benefits
-## Vagrant and Virtual Box
-### Virtualisation ?
+# What is Development (Dev) Environment (env) ?
+- A development environment is a practically workspace for developers to make changes without breaking anything in a live environment. It is the go to place for developers as they deploy changes. 
+## Benefits of Development environment:
+- 
+# What is Vagrant ?
+- A tool owned by HashCorps that is mainly used in builing and managing virutal machines in a singe workflow. Vagrant places emphasis on easy to use workflows and automation of tasks. It reduces time to set up dev environment. 
+# What is Virtual box ?
 
 Key Commands:
 vagrant up - intialises machine
@@ -40,7 +44,7 @@ OS version :  'uname' or 'uname-a'
 - how to us root user 'sudo su' or 'sudo i'(not good practice to use root user)
 -
  how to use '|' pipe
-- how to check file permission - '11'
+- how to check file permission - 'll'
 - how to change file permission - 'chmod permission (+x) filename'
 - 'r' or 'w' or 'rw' ' all also use number '400' or '600' for all '700'. 
 - update our ubuntu OS 'apt-get install update' (like pip) use sudo apt-get update (use superuser for any permission issues)
