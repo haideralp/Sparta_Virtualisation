@@ -42,3 +42,10 @@
 - 8.	Permission Errors – use sudo chmod +x filename.sh (grants access)
 - 9.	Check this has been granted (filename.sh turns green)  command ‘ll’
 - 10.	Run Script as above to execute. Voila the tasks are automated in the script ! 
+
+Setting up NGINX - HTTp/ HTTPs Protocol
+Install: sudo apt-get isntall nginx -y
+Check for Installation: 'sudo systemctl status nginx)
+- Restart / start a process - in the case it's an NGINX - 'sudo systemctl restarg nginx'
+- Enable the process: 'sudo systemctl enable nginx'
+- 
