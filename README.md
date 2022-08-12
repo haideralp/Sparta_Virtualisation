@@ -5,6 +5,11 @@
 - Improved productivity due to automation of tasks
 -  More efficient and streamlines process for developers saving time as they can stay update with latest practices and threats.
 -  Provides a creater sense of transpareny on the project so keeping workflow easy to use.
+# What is Virutal Box & Virtualisation ?
+- Virtual box is an open source software owned by oracle it is highly used the process of running virtual machines in your local host. You can run up different OS machines on one local host. 
+- Virtualisation means the practice use to generate a simulated environment as opposed to physical one. It often includes computer-generated versions of hardware, operating systems, storage devices and more. You can then parition single computer or server into several virtual machines. Each virtual machine can then interact independently and run different operating systems or applications while sharing the resources of a single host machine.
+- By creating multiple resources from a single computer or server, virtualisation improves scalability and workloads while resulting in the use of fewer overall servers, less energy consumption, and less infrastructure costs and maintenance.
+
 # What is Vagrant ?
 - A tool owned by HashCorps that is mainly used in builing and managing virutal machines in a singe workflow. Vagrant places emphasis on easy to use workflows and automation of tasks. It reduces time to set up dev environment. 
 
@@ -18,8 +23,8 @@
 -	Remove/Delete or Kill A Process (kill -1 to show processes)  SIGKILL/SIGTERM/SIGSTOP 
 -	Control + C – To go back to terminal. 
 -	Running update on Ubunto OS  sudo apt-get update -y / sudo apt-get upgrade -y 
--	Use of ‘|’ pipe:     command_1 | command_2 …. | command_N 
--	
+-	‘|’ pipe allows you to use two or more commands such that output of one command serves as input to the next.    command_1 | command_2 …. | command_N  
+- Use mv to rename a file type mv, a space, the name of the file, a space, and the new name you wish the file to have. Then press Enter: mv oldfile.txt newfile.txt
 
 ## Linux Permission Rights
 -	Root user access  ‘sudo su’ or sudo (not good practice to use root user as deletion from here is not recoverable)
