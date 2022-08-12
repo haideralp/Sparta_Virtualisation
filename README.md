@@ -8,8 +8,10 @@
 # What is Vagrant ?
 - A tool owned by HashCorps that is mainly used in builing and managing virutal machines in a singe workflow. Vagrant places emphasis on easy to use workflows and automation of tasks. It reduces time to set up dev environment. 
 
-![image](https://user-images.githubusercontent.com/97620055/184191411-31f2fb48-b5ec-4b05-911d-2e4eb0c28c8d.png)
+![image](https://user-images.githubusercontent.com/97620055/184310983-635bb3d1-1bb0-41b6-9223-b3c1ec1d9975.png)
 
+# Linux Key Commands
+![image](https://user-images.githubusercontent.com/97620055/184311189-0574095a-f8ca-464b-a30f-b947d6d794a0.png)
 
 ## Linux Processes:
 -	Check for Linux Processes (Task manager)  top or ps aux (aux gives more information)
