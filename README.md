@@ -69,4 +69,4 @@ Check for Installation: 'sudo systemctl status nginx)
 - Restart the process with command - sudo systemctl restart nginx (if not actively running)
 - Enable the process and check status again 
 - Test on browser using http/https://192.168.10.100 (which ever protocol works)
-- Common reason for errors: firewall settings (turn off), not saving vagran file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
+- Common reason for errors: firewall settings (turn off), not saving vagrant file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
