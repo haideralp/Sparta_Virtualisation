@@ -14,7 +14,7 @@
 4. Virtual machine/s:  Simulated environment generated - Vm/s created
 5. NGINX  - called 'engine-x' - open source web server on virtual machine also used as revered proxy.  (Uses internet settings from local host as an IP range hence a private network)
 6. SSH - Developers use SSH connection to establish connection from local host to VM to use internet. 
-7. Browser - Where users can see the desired connection has been establised, it will display the NGINX server on the web globally. 
+7. Browser - Where users can see the desired connection has been established, it will display the NGINX server on the web globally. 
 
 # What is Virutal Box & Virtualisation ?
 - Virtual box is an open source software owned by oracle it is highly used the process of running virtual machines in your local host. You can run up different OS machines on one local host. 
