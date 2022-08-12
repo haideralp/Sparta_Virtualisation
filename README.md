@@ -11,7 +11,7 @@
 - By creating multiple resources from a single computer or server, virtualisation improves scalability and workloads while resulting in the use of fewer overall servers, less energy consumption, and less infrastructure costs and maintenance.
 
 # What is Vagrant ?
-- A tool owned by HashCorps that is mainly used in builing and managing virutal machines in a singe workflow. Vagrant places emphasis on easy to use workflows and automation of tasks. It reduces time to set up dev environment. 
+- A tool owned by HashCorps that is mainly used in building and managing virutal machines in a singe workflow. Vagrant places emphasis on easy to use workflows and automation of tasks. It reduces time to set up dev environment. 
 
 ![image](https://user-images.githubusercontent.com/97620055/184310983-635bb3d1-1bb0-41b6-9223-b3c1ec1d9975.png)
 
@@ -43,9 +43,20 @@
 - 9.	Check this has been granted (filename.sh turns green)  command ‘ll’
 - 10.	Run Script as above to execute. Voila the tasks are automated in the script ! 
 
+## NGINC Setup
 Setting up NGINX - HTTp/ HTTPs Protocol
 Install: sudo apt-get isntall nginx -y
 Check for Installation: 'sudo systemctl status nginx)
-- Restart / start a process - in the case it's an NGINX - 'sudo systemctl restarg nginx'
+- Restart / start a process - in the case it's an NGINX - 'sudo systemctl restart nginx'
 - Enable the process: 'sudo systemctl enable nginx'
+## Private Network Guideline
+- On vagrant file configure private network using followed command:
+     config.vm.network "private_network", ip: "192.168.10.100"
+- Save Vagrant file  (really important)
+- Run Vagrant Reload !
+- Check for  nginx status  - using sudo systemctl status nginx
+- Restart the process with command - sudo systemctl restart nginx (if not actively running)
+- Enable the process and check status again 
+- Test on browser using http/https://192.168.10.100 (which ever protocol works)
+- Common reason for errors: firewall settings (turn off), not saving vagran file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
 - 
