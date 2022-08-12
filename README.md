@@ -32,18 +32,18 @@
 -	Change file/folder permission  chmod +x ‘file/foldername’ (sudo if permission denied’
 
 ## Automation Script Creation (DevOps): 
-- 1.	Ensure you are in virtual environment (vagrant ssh).
-- 2.	Create shell file (.sh)  nano ‘filename.sh’ or touch ‘filename.sh’
-- 3.	Enter relevant instruction in .sh file (e.g  apt-get update / upgrade)
-- 4.	Good practice to ensure permission rights are granted by using ‘sudo’.
-- 5.	Control X  Yes  Enter to exit .sh file.
-- 6.	Check contents have been saved  cat ‘filename.sh’
-- 7.	Run Script  ‘./provision.sh’
-- 8.	Permission Errors – use sudo chmod +x filename.sh (grants access)
-- 9.	Check this has been granted (filename.sh turns green)  command ‘ll’
-- 10.	Run Script as above to execute. Voila the tasks are automated in the script ! 
+  1.	Ensure you are in virtual environment (vagrant ssh).
+  2.	Create shell file (.sh)  nano ‘filename.sh’ or touch ‘filename.sh’
+  3.	Enter relevant instruction in .sh file (e.g  apt-get update / upgrade)
+  4.	Good practice to ensure permission rights are granted by using ‘sudo’.
+  5.	Control X  Yes  Enter to exit .sh file.
+  6.	Check contents have been saved  cat ‘filename.sh’
+  7.	Run Script  ‘./provision.sh’
+  8.	Permission Errors – use sudo chmod +x filename.sh (grants access)
+  9.	Check this has been granted (filename.sh turns green)  command ‘ll’
+  10.	Run Script as above to execute. Voila the tasks are automated in the script ! 
 
-## NGINC Setup
+## NGINX Setup
 Setting up NGINX - HTTp/ HTTPs Protocol
 Install: sudo apt-get isntall nginx -y
 Check for Installation: 'sudo systemctl status nginx)
@@ -59,4 +59,4 @@ Check for Installation: 'sudo systemctl status nginx)
 - Enable the process and check status again 
 - Test on browser using http/https://192.168.10.100 (which ever protocol works)
 - Common reason for errors: firewall settings (turn off), not saving vagran file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
-- 
+  
