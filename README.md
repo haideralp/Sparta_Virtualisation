@@ -6,6 +6,7 @@
 -  More efficient and streamlines process for developers saving time as they can stay update with latest practices and threats.
 -  Provides a creater sense of transpareny on the project so keeping workflow easy to use.
 ## Diagram Showcasing Development Environment:
+![image](https://user-images.githubusercontent.com/97620055/184344694-5369b62a-fe64-4650-b5f1-7a4bf7f9c101.png)
 ### Key Concepts:
 1. Developer specifes set of instructions on Vagrantfile (creatin ubuntu OS, private network)
 2. Virtual Box - open source software used to manage virtual environment (create, stop and destroy).  
