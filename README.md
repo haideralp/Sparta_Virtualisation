@@ -21,12 +21,12 @@
 -	Use of ‘|’ pipe:     command_1 | command_2 …. | command_N 
 -	
 
-# Linux Permission Rights
+## Linux Permission Rights
 -	Root user access  ‘sudo su’ or sudo (not good practice to use root user as deletion from here is not recoverable)
 -	Checking file/folder permission enter command ‘ll’
 -	Change file/folder permission  chmod +x ‘file/foldername’ (sudo if permission denied’
 
-# Automation Script Creation (DevOps): 
+## Automation Script Creation (DevOps): 
 - 1.	Ensure you are in virtual environment (vagrant ssh).
 - 2.	Create shell file (.sh)  nano ‘filename.sh’ or touch ‘filename.sh’
 - 3.	Enter relevant instruction in .sh file (e.g  apt-get update / upgrade)
