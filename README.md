@@ -5,6 +5,16 @@
 - Improved productivity due to automation of tasks
 -  More efficient and streamlines process for developers saving time as they can stay update with latest practices and threats.
 -  Provides a creater sense of transpareny on the project so keeping workflow easy to use.
+## Diagram Showcasing Development Environment:
+### Key Concepts:
+1. Developer specifes set of instructions on Vagrantfile (creatin ubuntu OS, private network)
+2. Virtual Box - open source software used to manage virtual environment (create, stop and destroy).  
+3. Provisioners - used to set up the IT infrastructure. It can also refer to the steps required to manage access to data and resources, and make them available to users and systems. 
+4. Virtual machine/s:  Simulated environment generated - Vm/s created
+5. NGINX  - called 'engine-x' - open source web server on virtual machine also used as revered proxy.  (Uses internet settings from local host as an IP range hence a private network)
+6. SSH - Developers use SSH connection to establish connection from local host to VM to use internet. 
+7. Browser - Where users can see the desired connection has been establised, it will display the NGINX server on the web globally. 
+
 # What is Virutal Box & Virtualisation ?
 - Virtual box is an open source software owned by oracle it is highly used the process of running virtual machines in your local host. You can run up different OS machines on one local host. 
 - Virtualisation means the practice use to generate a simulated environment as opposed to physical one. It often includes computer-generated versions of hardware, operating systems, storage devices and more. You can then parition single computer or server into several virtual machines. Each virtual machine can then interact independently and run different operating systems or applications while sharing the resources of a single host machine.
@@ -59,4 +69,3 @@ Check for Installation: 'sudo systemctl status nginx)
 - Enable the process and check status again 
 - Test on browser using http/https://192.168.10.100 (which ever protocol works)
 - Common reason for errors: firewall settings (turn off), not saving vagran file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
-  
