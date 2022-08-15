@@ -71,56 +71,58 @@ Check for Installation: 'sudo systemctl status nginx)
 - Test on browser using http/https://192.168.10.100 (which ever protocol works)
 - Common reason for errors: firewall settings (turn off), not saving vagrant file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
 
-# Week 4 - Key notes
-Case devloped - app use nodejs. according to them it works on local host. they sent piece of code and deploy. 
+# Week 4 - Deployment
+Case Study - app use nodejs. Developer sent piece of codes that works on local according to them it works on local host that needs to be deployed and displayed on 192.168.10.100:3000. piece of code and deploy. 
 
-### Monolith Deployment
-#### nodejs - backend too
-##### by default nodejs works on port 3000 
-
-## Q&A
+## Q&A - Sprint Review 
 
 Time boxing - 1 day for deployment 
-Unzip folder - in virtualisation folder (should show app and environment)
 
-What is node js - how to launch it
+- Unzip folder - in virtualisation folder (should show app and environment)
 
-What are the dependencies - install nodejs -> required version of that version 6.0 or above (sudo app-get install node.js -y (doesn't tells you version))  centOS 'yum install nodejs -y'
+- What is node js - how to launch it ? 
 
-Which environment must this app be deloyed in - Linux, Ubun 16.04 or above
+- What are the dependencies - install nodejs -> required version of that version 6.0 or above (sudo app-get install node.js -y (doesn't tells you version))  centOS 'yum install nodejs -y'
 
-What the features of this app - 3 pages
-1 - sparta app page, 
+- Which environment must this app be deloyed in - Linux, Ubun 16.04 or above
+
+-What the features of this app - 3 pages
+1 -  sparta app page, 
 2 - fibonacci replacement 
-3-  is '192.168.10.100:3000 /posts) for mon
+3 - is '192.168.10.100:3000 /posts) for mon
 
-Which environment must this app be deloyed in - Linux, Ubun 16.04 or above
-
-Are they any security issues we should be aware of ? mongo default port is 27017 and mondodb 
+- Are they any security issues we should be aware of ? mongo default port is 27017 and mondodb 
 allows to access  - mongod.conf you need to allow the required ip (machine)
 
 
-## Running Spec Tests / Folder Sync: 
+# Monolith Deployment
 
-Transfer app and environment folder for app in same folder
 
-Navigate to environment --> then to spect tests folder
 
-Run --> gem install bundler (only once it is installed)  --> Run Bundler (To see if it has worked)
+
+## Running Spec Tests & Folder App Sync: 
+
+1. Transfer app and environment folder for app in same folder
+
+2. Navigate to environment --> then to spect tests folder
+
+3. Run --> gem install bundler (only once it is installed)  --> Run Bundler (To see if it has worked)
 
 ![image](https://user-images.githubusercontent.com/97620055/184637134-20105b41-2aff-46c0-9bb7-59bb91b62041.png)
 
 
-Enter command for folder sync in vagrant file and save : (config.vm.synced_folder ".", "/home/vagrant/app")
+4. Enter command for folder sync in vagrant file and save : (config.vm.synced_folder ".", "/home/vagrant/app")
 
 ![image](https://user-images.githubusercontent.com/97620055/184637244-d43472dc-f7f1-431f-b991-b769c7453445.png)
 
-Vagrant Reload on local host and then vagrant ssh from other working terminal (to enter Vm)
+5. Vagrant Reload on local host and then vagrant ssh from other working terminal (to enter Vm)
 
-ls --> new folder app should be present. cd app into folder and pwd to confirm. 
+6. ls --> new folder app should be present. cd app into folder and pwd to confirm. 
 
 
-
+### Monolith Deployment
+#### nodejs - backend too
+##### by default nodejs works on port 3000 
 
 
 
