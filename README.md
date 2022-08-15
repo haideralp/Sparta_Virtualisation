@@ -16,7 +16,7 @@
 6. SSH - Developers use SSH connection to establish connection from local host to VM to use internet. 
 7. Browser - Where users can see the desired connection has been established, it will display the NGINX server on the web globally. 
 
-# What is Virutal Box & Virtualisation ?
+# What is Virtual Box & Virtualisation ?
 - Virtual box is an open source software owned by oracle it is highly used the process of running virtual machines in your local host. You can run up different OS machines on one local host. 
 - Virtualisation means the practice use to generate a simulated environment as opposed to physical one. It often includes computer-generated versions of hardware, operating systems, storage devices and more. You can then parition single computer or server into several virtual machines. Each virtual machine can then interact independently and run different operating systems or applications while sharing the resources of a single host machine.
 - By creating multiple resources from a single computer or server, virtualisation improves scalability and workloads while resulting in the use of fewer overall servers, less energy consumption, and less infrastructure costs and maintenance.
