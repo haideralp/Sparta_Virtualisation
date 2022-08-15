@@ -80,24 +80,25 @@ Time boxing - 1 day for deployment
 
 - Unzip folder - in virtualisation folder (should show app and environment)
 
-- What is node js - how to launch it ? 
+- What is node js - how to launch it ?  
 
 - What are the dependencies - install nodejs -> required version of that version 6.0 or above (sudo app-get install node.js -y (doesn't tells you version))  centOS 'yum install nodejs -y'
 
 - Which environment must this app be deloyed in - Linux, Ubun 16.04 or above
 
--What the features of this app - 3 pages
-1 -  sparta app page, 
-2 - fibonacci replacement 
-3 - is '192.168.10.100:3000 /posts) for mon
+- What the features of this app - 3 pages
+1. sparta app page, 
+2. fibonacci replacement 
+3. is '192.168.10.100:3000 /posts) for mon
 
 - Are they any security issues we should be aware of ? mongo default port is 27017 and mondodb 
 allows to access  - mongod.conf you need to allow the required ip (machine)
 
+- 
 
 # Monolith Deployment
 
-- A monolith application is run in a container as a single service and each container has the same features as all other containers. If one application experiences a change in demand the entire architecture must be scaled to meet this.
+- A monolith application is run in a container as a single service and each container has the same features as all other containers. If one application experiences a change in demand the entire architecture must be scaled to meet this. A nodejs app --> is backend too and by default works on port 3000.
 
 
 ![image](https://user-images.githubusercontent.com/97620055/184660975-cb216211-8f92-4204-bb03-a44f50a6b75c.png)
@@ -123,10 +124,27 @@ allows to access  - mongod.conf you need to allow the required ip (machine)
 
 6. ls --> new folder app should be present. cd app into folder and pwd to confirm. 
 
+### Deployment via Automation (provision) Script
 
-### Monolith Deployment
-#### nodejs - backend too
-##### by default nodejs works on port 3000 
+1.	Create a provision.sh script in the same directory where vagrant file is present.
+2.	Specify all the relevant installation, upgrade and update commands for Ubuntu, NGINX, Nodejs and NPM to ensure all relevant dependencies are installed prior to app deployment.
 
+![provision](https://user-images.githubusercontent.com/97620055/184679873-9060a98c-9afe-4aa7-acd9-923029268a04.png)
 
+3.	Configure to vagrant file with commands: ‘config.vm.provision "file", source: "~/pathfolder"' , to ensure the Vm is instructed to load this new set of script file as part of the process. 
 
+4.	To test you can run the rake spec command here to test all examples and dependencies are passing. 
+5.	SSH into Vm machine using command ‘vagrant ssh’. 
+6.	Navigate to app folder with relevant commands as shown below.
+
+![navigating to app](https://user-images.githubusercontent.com/97620055/184679828-eccea0a4-f379-49b9-97a5-8fa3247cc6e1.PNG)
+
+7.	If steps following correctly, you can directly proceed with ‘npm start’.
+
+![npm start](https://user-images.githubusercontent.com/97620055/184679940-4f0df897-291c-4a74-b13f-191e3cbf9692.PNG)
+
+8. If all steps are correct the app will be deployed on the address: 192.168.10.100:3000 as shown below. 
+ 
+![app is running](https://user-images.githubusercontent.com/97620055/184679779-8763db0d-6045-47f4-8cbf-e3292ac55c32.PNG)
+
+-	Debug Situation – There are times where rake spec test may show 1 failure to install pm2 package in step 4. Proceed as normal but execute ‘npm install express’ followed by ‘npm start’. 
