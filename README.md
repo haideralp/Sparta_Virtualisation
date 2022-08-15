@@ -108,7 +108,13 @@ Navigate to environment --> then to spect tests folder
 
 Run --> gem install bundler (only once it is installed)  --> Run Bundler (To see if it has worked)
 
-Vagrant Reload and then vagrant ssh from other terminal --> ls --> new folder app should be synced. 
+Enter command for folder sync in vagrant file and save : (config.vm.synced_folder ".", "/home/vagrant/app")
+
+Vagrant Reload on local host and then vagrant ssh from other working terminal (to enter Vm)
+
+ls --> new folder app should be present. cd app into folder and 
+
+
 
 
 
