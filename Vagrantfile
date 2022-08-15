@@ -1,7 +1,4 @@
-# What is Vagratn - it's owned by Hashi-Corp
-
-# Ruby
-
+# Ruby 
 
 Vagrant.configure("2") do |config|
 
@@ -14,6 +11,9 @@ Vagrant.configure("2") do |config|
 # let's sync our app folder from localhost to VM
  config.vm.synced_folder ".", "/home/vagrant/app" 
 # synch data form localhost   destination 
+# specifying to use provision.sh on VM
+
+ config.vm.provision :shell, path: "provision.sh"
+
 end
-# vagrant ssh
-# from the location where your Vagrantfile is
+

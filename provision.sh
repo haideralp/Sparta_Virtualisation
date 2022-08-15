@@ -19,3 +19,7 @@ sudo apt-get install -y nodejs
 
 # Install pm2
 sudo npm install pm2  # sudo to override permissions. 
+
+# Upgrade and Update Overall 
+sudo apt-get update -y
+sudo apt-get upgrade -y
