@@ -70,3 +70,46 @@ Check for Installation: 'sudo systemctl status nginx)
 - Enable the process and check status again 
 - Test on browser using http/https://192.168.10.100 (which ever protocol works)
 - Common reason for errors: firewall settings (turn off), not saving vagrant file, using vagrant destroy/up if reload not working but ensure re-intall nginx from steps above. 
+
+# Week 4 - Key notes
+Case devloped - app use nodejs. according to them it works on local host. they sent piece of code and deploy. 
+
+### Monolith Deployment
+#### nodejs - backend too
+##### by default nodejs works on port 3000 
+
+## Q&A
+
+Time boxing - 1 day for deployment 
+Unzip folder - in virtualisation folder (should show app and environment)
+
+What is node js - how to launch it
+
+What are the dependencies - install nodejs -> required version of that version 6.0 or above (sudo app-get install node.js -y (doesn't tells you version))  centOS 'yum install nodejs -y'
+
+Which environment must this app be deloyed in - Linux, Ubun 16.04 or above
+
+What the features of this app - 3 pages
+1 - sparta app page, 
+2 - fibonacci replacement 
+3-  is '192.168.10.100:3000 /posts) for mon
+
+Which environment must this app be deloyed in - Linux, Ubun 16.04 or above
+
+Are they any security issues we should be aware of ? mongo default port is 27017 and mondodb 
+allows to access  - mongod.conf you need to allow the required ip (machine)
+
+
+## Running Spec Tests / Folder Sync: 
+
+Transfer app and environment folder for app in same folder
+
+Navigate to environment --> then to spect tests folder
+
+Run --> gem install bundler (only once it is installed)  --> Run Bundler (To see if it has worked)
+
+Vagrant Reload and then vagrant ssh from other terminal --> ls --> new folder app should be synced. 
+
+
+
+
