@@ -127,11 +127,13 @@ allows to access  - mongod.conf you need to allow the required ip (machine)
 ### Deployment via Automation (provision) Script
 
 1.	Create a provision.sh script in the same directory where vagrant file is present.
-2.	Specify all the relevant installation, upgrade and update commands for Ubuntu, NGINX, Nodejs and NPM to ensure all relevant dependencies are installed prior to app deployment.
+2.	Specify all the relevant installation, upgrade and update commands for Ubuntu, NGINX, nodejs and npm to ensure all relevant dependencies are installed prior to app deployment.
 
 ![provision](https://user-images.githubusercontent.com/97620055/184679873-9060a98c-9afe-4aa7-acd9-923029268a04.png)
 
 3.	Configure to vagrant file with commands: ‘config.vm.provision "file", source: "~/pathfolder"' , to ensure the Vm is instructed to load this new set of script file as part of the process. 
+
+![image](https://user-images.githubusercontent.com/97620055/184680372-4a4a4722-9065-4cc8-9a43-50100ea0429c.png)
 
 4.	To test you can run the rake spec command here to test all examples and dependencies are passing. 
 5.	SSH into Vm machine using command ‘vagrant ssh’. 
