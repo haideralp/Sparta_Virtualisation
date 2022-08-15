@@ -98,7 +98,9 @@ allows to access  - mongod.conf you need to allow the required ip (machine)
 # Monolith Deployment
 
 - A monolith application is run in a container as a single service and each container has the same features as all other containers. If one application experiences a change in demand the entire architecture must be scaled to meet this.
-![image](https://user-images.githubusercontent.com/97620055/184660495-96c3936c-c210-4109-90b1-48200f700e44.png)
+
+
+![image](https://user-images.githubusercontent.com/97620055/184660975-cb216211-8f92-4204-bb03-a44f50a6b75c.png)
  
 
 
