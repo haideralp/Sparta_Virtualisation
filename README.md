@@ -171,5 +171,21 @@ Day 2
   - export last_name=Abedi
   - export DB_HOST=mongodb://192.168.10.150:27017/posts
   - source ~/.bashrc
+#### Setting Reverse Proxy
+- Install and update Nginx
+- Navigate to Locate to and enter default server settings -->  /etc
+- NAv
+server {
+listen 80;
+location / {
+proxy_pass http://localhost:3000;
+}
+}
+Save and exit file 
+Check for Nginx Syntax - 'sudo nginx -t'
+If okay, restart nginx to config new settings in the default file --> sudo systemcl restart nginx
+Check IP address: 192.168.10.100
+
+
 
 default post is 80 for any page
