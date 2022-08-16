@@ -163,6 +163,7 @@ nohup node app.js > dev/null 2>&
 - Env var we have a key word called 'export' eg. export Last_Name=Abedi
 - Check specific Env var 'printenv Last_Name' outcome 'value' (Abedi)
 - Use same spelling as it is case sensitive 
+- 
 ##  How to make Env Variable 'PERSISTENT'
 - Task research how to make env persistent of your 'first_name' and 'last_name' and 'DB_HOST=mongodb://192.168.10.150:27017/posts' 
 1. Inside your Vm enviromnent, locate the presence of bashrc file.
@@ -185,3 +186,18 @@ nohup node app.js > dev/null 2>&
 ## Overview Diagram of Multi-Machine Setup
 ![image](https://user-images.githubusercontent.com/97620055/184930931-95465c56-ea5c-4c2c-9ca7-170d7ce29947.png)
 
+## Configuring a Multi-Machine setup
+1. Ensure the vagrantfile is instructed to set up do seperate machines. Imagine below shows all the necessary configs required.
+![image](https://user-images.githubusercontent.com/97620055/184934308-d0bcd325-0f34-4de3-b610-d4c52cb0c552.png)
+2. Perform 'vagrant up' (Previous versions use vagrant destroy to delete any cache situation'
+3. This will take few minutes as relevant dependencies are initiated from provision.sh file. 
+4. Use 'vagrant status' to determine the two Vms running (see below)
+![image](https://user-images.githubusercontent.com/97620055/184934974-43da453a-85f3-4a87-864e-5a521713d4fd.png)
+
+5. Now that is completed you need to vagrant ssh into each vm seperately ( vagrant ssh app / vagrant ssh db) and perform updates and upgrades of dependencies needed. 
+6. Do 'sudo apt-get upgrade -y' followed by 'sudo apt-get update -y. 
+7. This will update both VMs. So whilst staying in Vm app --> navigate to app folder and perform sudo apt-get install npm
+![image](https://user-images.githubusercontent.com/97620055/184936545-cb659ee2-aec0-4324-8e98-0d39bcb6f8de.png)
+8. You can then start the app with 'npm start' 
+![npm start](https://user-images.githubusercontent.com/97620055/184935833-3ee280a3-595e-4074-b4e9-e2740e0b3d34.PNG)
+9. Check the app is working on 192.168.10.100 (As I have reverse proxied the 3000 port is should not be needed).
