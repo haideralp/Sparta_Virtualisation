@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 # synch data form localhost   destination 
 # specifying to use provision.sh on VM
 
+# Specifying with file name and path.
  config.vm.provision :shell, path: "provision.sh"
 
 end
-

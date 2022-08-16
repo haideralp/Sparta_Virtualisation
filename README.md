@@ -149,4 +149,27 @@ allows to access  - mongod.conf you need to allow the required ip (machine)
  
 ![app is running](https://user-images.githubusercontent.com/97620055/184679779-8763db0d-6045-47f4-8cbf-e3292ac55c32.PNG)
 
--	Debug Situation – There are times where rake spec test may show 1 failure to install pm2 package in step 4. Proceed as normal but execute ‘npm install express’ followed by ‘npm start’. 
+-	Debug Situation – There are times where rake spec test may show 1 failure to install pm2 package in step 4. Proceed as normal but execute ‘npm install express’ followed by ‘npm start’.
+
+nohup node app.js > dev/null 2>&
+
+Day 2 
+
+### Linux Variable & Env Variable in Linux - Windoes - Mac 
+- How to check existing Env Var 'env' or 'printenv' 
+   - reuse these varribales (do no repeat yourself) in specific environment. 
+-How to create a var in linux 'Name=Haider'
+- How to check Lunx Var 'echo $Name' (echo means print in linux)
+- Env var we have a key word called 'export' eg. export Last_Name=Abedi
+- Check specific Env var 'printenv Last_Name' outcome 'value' (Abedi)
+- Use same spelling as it is case sensitive 
+  ##### How tom make Env Variable 'PERSISTENT'
+  - research how to make env persistent of your 'first_name' and 'last_name' and 'DB_HOST=mongodb://192.168.10.150:27017/posts' 
+
+sudo nano ~/.bashrc
+export first_name=Haider
+export last_name=Abedi
+export DB_HOST=mongodb://192.168.10.150:27017/posts
+source ~/.bashrc
+
+default post is 80 for any page
