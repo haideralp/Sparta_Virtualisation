@@ -165,27 +165,23 @@ nohup node app.js > dev/null 2>&
 - Use same spelling as it is case sensitive 
 ##  How to make Env Variable 'PERSISTENT'
 - Task research how to make env persistent of your 'first_name' and 'last_name' and 'DB_HOST=mongodb://192.168.10.150:27017/posts' 
-1. Inside your Vm enviromnent ()
-  - sudo nano ~/.bashrc
-  - export first_name=Haider
-  - export last_name=Abedi
-  - export DB_HOST=mongodb://192.168.10.150:27017/posts
-  - source ~/.bashrc
-#### Setting Reverse Proxy
+1. Inside your Vm enviromnent, locate the presence of bashrc file.
+2. Enter the file with command 'sudo nano ~/.bashrc'
+3. Specify all your environment variables with function 'export'
+4. Save and Exit the source the file with command 'source ~/.bashrc' as this will scan and apply the changes. 
+5. If correctly done printenv var, will display the value in return as shown below. 
+  
+## Setting Reverse Proxy for Nginx  
+- Why -> Making it user friendly and so ports do not have to be rememebered as 80 is default port. 
+
 - Install and update Nginx
 - Navigate to Locate to and enter default server settings -->  /etc
-- NAv
-server {
-listen 80;
-location / {
-proxy_pass http://localhost:3000;
-}
-}
-Save and exit file 
-Check for Nginx Syntax - 'sudo nginx -t'
-If okay, restart nginx to config new settings in the default file --> sudo systemcl restart nginx
-Check IP address: 192.168.10.100
+- Once you nano in to the settings under location enter 'proxy_pass http://localhost:3000;'
+- Save and Exit the file - Control X and Y followed by enter. 
+- Check for Nginx Syntax - 'sudo nginx -t'
+- If okay, restart nginx to config new settings in the default file --> sudo systemcl restart nginx
+- Check IP address: 192.168.10.100 (default port is 80 for any page)
 
+## Overview Diagram of Multi-Machine Setup
+![image](https://user-images.githubusercontent.com/97620055/184930931-95465c56-ea5c-4c2c-9ca7-170d7ce29947.png)
 
-
-default post is 80 for any page
