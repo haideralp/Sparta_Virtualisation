@@ -166,10 +166,10 @@ Day 2
   ##### How tom make Env Variable 'PERSISTENT'
   - research how to make env persistent of your 'first_name' and 'last_name' and 'DB_HOST=mongodb://192.168.10.150:27017/posts' 
 
-sudo nano ~/.bashrc
-export first_name=Haider
-export last_name=Abedi
-export DB_HOST=mongodb://192.168.10.150:27017/posts
-source ~/.bashrc
+  - sudo nano ~/.bashrc
+  - export first_name=Haider
+  - export last_name=Abedi
+  - export DB_HOST=mongodb://192.168.10.150:27017/posts
+  - source ~/.bashrc
 
 default post is 80 for any page
