@@ -189,7 +189,7 @@ nohup node app.js > dev/null 2>&
 2. Navigate to the location withe cd and create a new file using nano command (sudo nano reverse_prox).
 3. Enter the following config settings in the new file: 
  
- server {
+ '' server {
         listen 80;
         listen [::]:80;
 
@@ -199,7 +199,7 @@ nohup node app.js > dev/null 2>&
         location / {
                     proxy_pass http://localhost:3000;
   }
-}
+}''
 
 4. Once completed we can automate the script by overwriting the default file by adding the commands below in the provisioning file:
 
