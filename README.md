@@ -244,15 +244,24 @@ sudo systemctl restart nginx
 9. Check the app is working on 192.168.10.100 (As I have reverse proxied the 3000 port so it should not be needed).
 
 
-### Debugging Issues
+### Debugging Issues Encountered
+- App starts - Remember after sudo apt-get install npm then enter npm install is key before npm start
 - Unable to reverse proxy to port 3000 for some reason despite following procedure - pending investigation. 
 
 
- ### Setting up Mongodn
+ ### Setting up Mongod Vm
 
   - Config the key for server with command -->  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927 
   - Install the repository with command --> echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list 
   - Run 'update' and 'upgrade' - sudo apt-get update -y / sudo apt-get upgrade -y
   - Install the supported version of mongod with command - sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
   - Check the status of mongodb -->  systemctl status mongod
-  - Restart and enable the db sudo systemctl restart mongod & sudo systemctl enable mongod with status = dead. 
+  - Restart and enable the db sudo systemctl restart mongod & sudo systemctl enable mongod with status = dead.
+  - Go to cd /etc then sudo nano mongod.conf 
+  - cat mongod.conf
+  - vagrant ssh app - printenv DB_HOST (no value returned)
+  - run export DB_HOST=mongodb://192.168.10.150:27017/posts
+  - TO confirm action has been carried out so when we printenv DB_HOST should print 
+
+sudo node seeds/seed.js - fetches data
+npm start
