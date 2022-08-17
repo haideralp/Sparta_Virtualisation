@@ -176,12 +176,38 @@ nohup node app.js > dev/null 2>&
 - Why -> Making it user friendly and so ports do not have to be rememebered as 80 is default port. 
 
 - Install and update Nginx
-- Navigate to Locate to and enter default server settings -->  /etc
+- Navigate to Locate to and enter default server settings -->  '/etc/nginx/sites-available/default'
 - Once you nano in to the settings under location enter 'proxy_pass http://localhost:3000;'
 - Save and Exit the file - Control X and Y followed by enter. 
 - Check for Nginx Syntax - 'sudo nginx -t'
 - If okay, restart nginx to config new settings in the default file --> sudo systemcl restart nginx
 - Check IP address: 192.168.10.100 (default port is 80 for any page)
+
+## Automation of Reverse Proxy Server
+
+1. Firstly on the Vm, choose a directory to create a new reverse proxy file. In this exammple, I have used /app/app folder as a location.
+2. Navigate to the location withe cd and create a new file using nano command (sudo nano reverse_prox).
+3. Enter the following config settings in the new file: 
+ 
+ server {
+        listen 80;
+        listen [::]:80;
+
+        access_log /var/log/nginx/reverse-access.log;
+        error_log /var/log/nginx/reverse-error.log;
+
+        location / {
+                    proxy_pass http://localhost:3000;
+  }
+}
+
+4. Once completed we can automate the script by overwriting the default file by adding the commands below in the provisioning file:
+
+sudo cp -f app/app/reverse_prox /etc/nginx/sites-available/default
+
+sudo systemctl restart nginx
+
+5. The -f funcionality overwrites the defauly file and with vagrant up automates the process. Need to restart nginx with the other command to initialise the changes instructed. 
 
 ## Overview Diagram of Multi-Machine Setup
 ![image](https://user-images.githubusercontent.com/97620055/184930931-95465c56-ea5c-4c2c-9ca7-170d7ce29947.png)
@@ -199,5 +225,11 @@ nohup node app.js > dev/null 2>&
 7. This will update both VMs. So whilst staying in Vm app --> navigate to app folder and perform sudo apt-get install npm
 ![image](https://user-images.githubusercontent.com/97620055/184936545-cb659ee2-aec0-4324-8e98-0d39bcb6f8de.png)
 8. You can then start the app with 'npm start' 
+
 ![npm start](https://user-images.githubusercontent.com/97620055/184935833-3ee280a3-595e-4074-b4e9-e2740e0b3d34.PNG)
-9. Check the app is working on 192.168.10.100 (As I have reverse proxied the 3000 port is should not be needed).
+
+9. Check the app is working on 192.168.10.100 (As I have reverse proxied the 3000 port so it should not be needed).
+
+
+### Debugging Issues
+- Unable to reverse proxy to port 3000 for some reason despite following procedure - pending investigation. 
