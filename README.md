@@ -188,11 +188,11 @@ nohup node app.js > dev/null 2>&
 - Why -> Making it user friendly and so ports do not have to be rememebered as 80 is default port. 
 
 - Install and update Nginx
-- Navigate to Locate to and enter default server settings -->  '/etc/nginx/sites-available/default'
+- Navigate to Locate to and enter default server settings -->  'sudo nano /etc/nginx/sites-available/default'
 - Once you nano in to the settings under location enter 'proxy_pass http://localhost:3000;'
 - Save and Exit the file - Control X and Y followed by enter. 
 - Check for Nginx Syntax - 'sudo nginx -t'
-- If okay, restart nginx to config new settings in the default file --> sudo systemcl restart nginx
+- If okay, restart nginx to config new settings in the default file --> sudo systemctl restart nginx
 - Check IP address: 192.168.10.100 (default port is 80 for any page)
 
 ## Automation of Reverse Proxy Server
@@ -246,3 +246,13 @@ sudo systemctl restart nginx
 
 ### Debugging Issues
 - Unable to reverse proxy to port 3000 for some reason despite following procedure - pending investigation. 
+
+
+ ### Setting up Mongodn
+
+  - Config the key for server with command -->  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927 
+  - Install the repository with command --> echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list 
+  - Run 'update' and 'upgrade' - sudo apt-get update -y / sudo apt-get upgrade -y
+  - Install the supported version of mongod with command - sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+  - Check the status of mongodb -->  systemctl status mongod
+  - Restart and enable the db sudo systemctl restart mongod & sudo systemctl enable mongod with status = dead. 
