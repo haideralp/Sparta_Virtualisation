@@ -190,6 +190,7 @@ nohup node app.js > dev/null 2>&
 3. Enter the following config settings in the new file: 
  
  '' server {
+        
         listen 80;
         listen [::]:80;
 
