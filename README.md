@@ -100,9 +100,21 @@ allows to access  - mongod.conf you need to allow the required ip (machine)
 
 - A monolith application is run in a container as a single service and each container has the same features as all other containers. If one application experiences a change in demand the entire architecture must be scaled to meet this. A nodejs app --> is backend too and by default works on port 3000.
 
+![image](https://user-images.githubusercontent.com/97620055/185053861-2739c1db-92b1-4600-b076-37896ff19ebf.png)
 
-![image](https://user-images.githubusercontent.com/97620055/184660975-cb216211-8f92-4204-bb03-a44f50a6b75c.png)
+## Advantages
+
+- Less cross-cutting concerns. Cross-cutting concerns are the concerns that affect the whole application such as logging, handling, caching, and performance monitoring. In a monolithic application, this area of functionality concerns only one application so it is easier to handle it.
+- Easier debugging and testing. In contrast to the microservices architecture, monolithic applications are much easier to debug and test. Since a monolithic app is a single indivisible unit, you can run end-to-end testing much faster.
+- Simple to deploy. Another advantage associated with the simplicity of monolithic apps is easier deployment. When it comes to monolithic applications, you do not have to handle many deployments – just one file or directory.
+- Simple to develop. As long as the monolithic approach is a standard way of building applications, any engineering team has the right knowledge and capabilities to develop a monolithic application.
+
+ ## Disadvantages
  
+- Understanding. When a monolithic application scales up, it becomes too complicated to understand. Also, a complex system of code within one application is hard to manage.
+- Making changes. It is harder to implement changes in such a large and complex application with highly tight coupling. Any code change affects the whole system so it has to be thoroughly coordinated. This makes the overall development process much longer.
+- Scalability. You cannot scale components independently, only the whole application.
+- New technology barriers. It is extremely problematic to apply a new technology in a monolithic application because then the entire application has to be rewritten.
 
 
 ## Running Spec Tests & Folder App Sync: 
