@@ -202,16 +202,20 @@ nohup node app.js > dev/null 2>&
 3. Enter the following config settings in the new file: 
  
   server {
-        
-        listen 80;
-        listen [::]:80;
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
-        access_log /var/log/nginx/reverse-access.log;
-        error_log /var/log/nginx/reverse-error.log;
+    root /var/www/html;
 
-        location / {
-                    proxy_pass http://localhost:3000;
-  }
+    
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    location / {
+            proxy_pass http://localhost:3000;
+    }
+
 }
 
 4. Once completed we can automate the script by overwriting the default file by adding the commands below in the provisioning file:
@@ -243,25 +247,42 @@ sudo systemctl restart nginx
 
 9. Check the app is working on 192.168.10.100 (As I have reverse proxied the 3000 port so it should not be needed).
 
+# Day 3 - Week 4
 
-### Debugging Issues Encountered
-- App starts - Remember after sudo apt-get install npm then enter npm install is key before npm start
-- Unable to reverse proxy to port 3000 for some reason despite following procedure - pending investigation. 
+## Updating Diagram Showcasing Mongod Vm Set up 
 
+![image](https://user-images.githubusercontent.com/97620055/185333940-5456e15d-ccc7-426e-a3bb-a29ad46585fa.png)
 
  ### Setting up Mongod Vm
 
-  - Config the key for server with command -->  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927 
-  - Install the repository with command --> echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list 
-  - Run 'update' and 'upgrade' - sudo apt-get update -y / sudo apt-get upgrade -y
-  - Install the supported version of mongod with command - sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
-  - Check the status of mongodb -->  systemctl status mongod
-  - Restart and enable the db sudo systemctl restart mongod & sudo systemctl enable mongod with status = dead.
-  - Go to cd /etc then sudo nano mongod.conf 
-  - cat mongod.conf
-  - vagrant ssh app - printenv DB_HOST (no value returned)
-  - run export DB_HOST=mongodb://192.168.10.150:27017/posts
-  - TO confirm action has been carried out so when we printenv DB_HOST should print 
+  1. Config the key for server with command -->  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv D68FA50FEA312927 
+  2. Install the repository with command --> echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list 
+  3. Run 'update' and 'upgrade' - sudo apt-get update -y / sudo apt-get upgrade -y
+  4. Install the supported version of mongod with command - sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+  5. Check the status of mongodb -->  systemctl status mongod
+  6. Restart and enable the db sudo systemctl restart mongod & sudo systemctl enable mongod with status = dead.
+  7. Go to cd /etc then sudo nano mongod.conf change ip to 0.0.0.0 (to allow access to anyone)
+  8. cat mongod.conf - verfies changes if content is visibile
+  9  vagrant ssh app - printenv DB_HOST (no value returned)
+  10. run export DB_HOST=mongodb://192.168.10.150:27017/posts
+  11. To confirm action has been carried out so when we printenv DB_HOST should print 
+  
+  ### Automation of The Overall Process
+  
+  1. Create provision file for db and configure with commands you wish to run - see file on repository for commands
+  2. Create mongod.conf file in local host and instruct on db provisioning sh file to replace the default. Local host mongod gives permissions to anyone. 
+  3. Configure the provison.sh file for app Vm to set DB_HOST as well as fetch data from database - see updated provision.sh app file in repo. 
+  4. Update the Vagrant file with the relevant specs - see updated vagrant file with comments. 
+  5. Run following commands in order:  vagrant up --> vagrant ssh app --> cd app/app --> npm start. 
+  6. Navigate to 192.168.10.100/posts - Should see posts with data. 
+  7. Debugging issues discussed below. 
 
-sudo node seeds/seed.js - fetches data
-npm start
+
+####  Debugging Issues Encountered
+##### App Startup Issues (App on its own)
+ - Run Commands in order afer vagrant ssh into app then: sudo apt-get install npm --> npm install --> npm start 
+##### Reverse Proxy issues
+- DB not connecting issues
+- Corruption of database - vagrant destroy and delete .vagrant file then do vagrant up on db/app.
+##### Automation Issues
+- Change order of db Vm machine set up on vagrant file (Db first then app)
