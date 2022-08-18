@@ -1,5 +1,3 @@
-!/bin/bash
-
 # Update & Upgrade Ubuntu - OS
 
 sudo apt-get update -y

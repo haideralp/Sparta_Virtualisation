@@ -1,5 +1,3 @@
-!/bin/bash
-
 # Update & Upgrade Ubuntu - OS
 sudo apt-get update -y
 sudo apt-get upgrade -y
@@ -12,10 +10,14 @@ echo "deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
+# Install mondodb
+sudo apt-get install -y mongodb-org=3.2.20 mongodb-org-server=3.2.20 mongodb-org-shell=3.2.20 mongodb-org-mongos=3.2.20 mongodb-org-tools=3.2.20
+
 # Mongodb Intialisation
-sudo systemctl restart mongod
 sudo systemctl enable mongod
+sudo systemctl restart mongod
+
 
 # Instructing to replace mongod.conf in app with default vm - Allow permissions.
-sudo cp -f app/mongod.conf /etc/mongod.conf
+sudo cp -f /Users/haide/Sparta_Virtualisation/mongod.conf /etc/mongod.conf
 sudo systemctl restart mongod
