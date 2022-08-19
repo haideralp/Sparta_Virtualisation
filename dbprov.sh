@@ -19,5 +19,5 @@ sudo systemctl restart mongod
 
 
 # Instructing to replace mongod.conf in app with default vm - Allow permissions.
-sudo cp -f /Users/haide/Sparta_Virtualisation/mongod.conf /etc/mongod.conf
+sudo cp -f /Users/haide/Sparta_Virtualisation/mongod.conf /etc/
 sudo systemctl restart mongod

@@ -281,6 +281,8 @@ sudo systemctl restart nginx
 ####  Debugging Issues Encountered
 ##### App Startup Issues (App on its own)
  - Run Commands in order afer vagrant ssh into app then: sudo apt-get install npm --> npm install --> npm start 
+ - Make sure commands are correct - on provisioning file
+ - Debug - each vm if errors occur.
 ##### Reverse Proxy issues
 - DB not connecting issues
 - Corruption of database - vagrant destroy and delete .vagrant file then do vagrant up on db/app.
