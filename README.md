@@ -49,7 +49,7 @@
   4.	Good practice to ensure permission rights are granted by using ‘sudo’.
   5.	Control X  Yes  Enter to exit .sh file.
   6.	Check contents have been saved  cat ‘filename.sh’
-  7.	Run Script  ‘./provision.sh’
+  7.	Run Script  ‘./provision.sh’
   8.	Permission Errors – use sudo chmod +x filename.sh (grants access)
   9.	Check this has been granted (filename.sh turns green)  command ‘ll’
   10.	Run Script as above to execute. Voila the tasks are automated in the script ! 
